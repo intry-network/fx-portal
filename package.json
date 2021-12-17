@@ -1,6 +1,6 @@
 {
   "name": "@intry/fx-portal",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "FxPortal for Polygon chain. No mapping. Seamless.",
   "main": "index.js",
   "scripts": {
@@ -32,12 +32,12 @@
     "dotenv": "^8.2.0",
     "ethereum-waffle": "^3.2.1",
     "ethers": "^5.0.24",
+    "hardhat": "^2.8.0",
     "prettier": "2.4.1",
     "prettier-plugin-solidity": "^1.0.0-beta.18"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.2.0",
-    "@openzeppelin/contracts-upgradeable": "^4.4.1",
-    "hardhat": "^2.8.0"
+    "@openzeppelin/contracts-upgradeable": "^4.4.1"
   }
 }
