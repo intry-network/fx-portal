@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+import {Initializable} from "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
+
 import {RLPReader} from "../lib/RLPReader.sol";
 import {MerklePatriciaProof} from "../lib/MerklePatriciaProof.sol";
 import {Merkle} from "../lib/Merkle.sol";
@@ -26,7 +28,7 @@ contract ICheckpointManager {
     mapping(uint256 => HeaderBlock) public headerBlocks;
 }
 
-abstract contract FxBaseRootTunnel {
+abstract contract FxBaseRootTunnelUpgradeable is Initializable {
     using RLPReader for RLPReader.RLPItem;
     using Merkle for bytes32;
     using ExitPayloadReader for bytes;
@@ -48,7 +50,7 @@ abstract contract FxBaseRootTunnel {
     // storage to avoid duplicate exits
     mapping(bytes32 => bool) public processedExits;
 
-    constructor(address _checkpointManager, address _fxRoot) {
+    function __FxBaseRootTunnel_init_unchained(address _checkpointManager, address _fxRoot) internal initializer {
         checkpointManager = ICheckpointManager(_checkpointManager);
         fxRoot = IFxStateSender(_fxRoot);
     }
@@ -176,4 +178,6 @@ abstract contract FxBaseRootTunnel {
      * @param message bytes message that was sent from Child Tunnel
      */
     function _processMessageFromChild(bytes memory message) internal virtual;
+
+    uint256[46] private __gap;
 }
