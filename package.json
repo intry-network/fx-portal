@@ -1,5 +1,5 @@
 {
-  "name": "@maticnetwork/fx-portal",
+  "name": "@intry/fx-portal",
   "version": "1.0.4",
   "description": "FxPortal for Polygon chain. No mapping. Seamless.",
   "main": "index.js",
@@ -10,6 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/fx-portal/contracts.git"
   },
+  "files": [
+    "**/*.sol",
+    "!/examples"
+  ],
   "keywords": [
     "ethereum",
     "matic"

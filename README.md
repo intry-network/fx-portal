@@ -1,3 +1,5 @@
+Fork of Polygon's [fx-portal](https://github.com/Polymarket/fx-portal). Polygon's repo does not have an associated npm package so we forked it to create our own so that we can use the contracts without dealing with submodules.
+
 # fx-portal(Flexible portal)
 
 FxPortal for Polygon(prev Matic)Chain. No mapping. Seamless communication with Ethereum Network.
